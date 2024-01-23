@@ -13,3 +13,38 @@
  *= require_tree .
  *= require_self
  */
+
+
+ .card {
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: auto;
+ }
+
+ h1 {
+  color: magenta;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.task-form {
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: auto;
+}
+
+.button2 {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.button1 {
+  text-decoration: none;
+  color: magenta;
+}
+
+ul {
+  list-style-type: none;
+}

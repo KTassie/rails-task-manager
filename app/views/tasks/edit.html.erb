@@ -1,0 +1,16 @@
+<h1>Edit Task</h1>
+
+<%= form_with(model: @task, local: true, method: :patch) do |form| %>
+  <%= form.label :title, class: "form-control"  %>
+  <%= form.text_field :title %>
+
+  <%= form.label :details, class: "form-control"  %>
+  <%= form.text_area :details %>
+
+  <%= form.label :completed %>
+  <%= form.check_box :completed %>
+
+  <%= form.submit %>
+<% end %>
+
+<%= link_to 'Back to Tasks', tasks_path %>

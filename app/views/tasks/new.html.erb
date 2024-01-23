@@ -1,0 +1,19 @@
+<div class="task-form">
+<h1>New Task</h1>
+
+<%= form_with(model: @task, local: true) do |form| %>
+  <%= form.label :title, class: "" %>
+  <%= form.text_field :title, class: "form-control" %>
+
+  <%= form.label :details, class: "" %>
+  <%= form.text_area :details, class: "form-control" %>
+
+  <%= form.label :completed%>
+  <%= form.check_box :completed%>
+
+  <button type="button" class="text-decoration-none btn btn-dark shadow-lg mt-1"><%= form.submit class: "button1"%></button>
+<% end %>
+
+<button type="button" class="text-decoration-none btn btn-dark shadow-lg mt-1"><%= link_to 'Back to Tasks', tasks_path, class: "button2" %></button>
+
+</div>
