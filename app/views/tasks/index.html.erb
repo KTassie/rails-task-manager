@@ -1,15 +1,19 @@
 <div class="card">
 <h1>All Tasks</h1>
 
-<ul>
-    <% @tasks.each do |task| %>
-    <li>
+
+<% @tasks.each do |task| %>
+  <li>
     <%= check_box_tag "task_ids[]", task.id, task.completed %>
     <%= link_to task.title, task_path(task) %>
-    </li>
+    <%= form_with(model: task, url: task_path(task), method: :delete, class: 'd-inline') do |form| %>
+      <%= form.submit 'Delete', class: 'btn btn-danger btn-sm'%>
     <% end %>
-</ul>
+  </li>
 
+<% end %>
 <%= link_to 'New Task', new_task_path, class: 'btn btn-primary' %>
 
 </div>
+
+<ul>

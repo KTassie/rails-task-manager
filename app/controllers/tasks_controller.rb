@@ -7,8 +7,7 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
-    p "Doing the show"
+
   end
 
   def new
@@ -32,7 +31,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :details, :completed)
+    params.require(:task).permit(:id, :title, :details, :completed)
   end
 
   def edit
@@ -46,5 +45,12 @@ class TasksController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
+    flash[:notice] = 'DESTROYED'
+    redirect_to tasks_path
   end
 end
